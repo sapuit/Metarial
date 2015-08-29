@@ -12,6 +12,12 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/action_TabWithLibrary"
+        android:orderInCategory="90"
+        android:title="@string/action_TabWithLibrary"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/navigate"
         android:icon="@drawable/ic_navigate_next_white_24dp"
         android:orderInCategory="200"

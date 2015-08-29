@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sapui.metarial.ActivityUsingTabLibrary">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+    <it.neokree.materialtabs.MaterialTabHost
+    android:id="@+id/materialTabHost"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_below="@+id/app_bar"
+    app:accentColor="#ffa300"
+    app:primaryColor="@color/primaryColor"
+    app:textColor="#FFFFFF" />
+
+    <!--<it.neokree.materialtabs.MaterialTabHost-->
+        <!--android:id="@+id/materialTabHost"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:layout_below="@+id/app_bar"-->
+        <!--app:accentColor="#ffa300"-->
+        <!--app:hasIcons="true"-->
+        <!--app:iconColor="#FFFFFF"-->
+        <!--app:primaryColor="@color/primaryColor" />-->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/materialTabHost"
+        android:layout_weight="1" />
+    <!-- for icon tabs -->
+
+
+</RelativeLayout>

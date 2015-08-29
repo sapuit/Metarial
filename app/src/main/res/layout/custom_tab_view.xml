@@ -10,11 +10,13 @@
         android:id="@+id/tabImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        />
 
     <TextView
         android:id="@+id/tabText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="bottom|center" />
+        android:gravity="bottom|center"
+        />
 </LinearLayout>

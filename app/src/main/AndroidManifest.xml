@@ -9,14 +9,20 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main"></activity>
+            android:label="@string/title_activity_main" />
         <activity
             android:name=".SubActivity"
             android:label="@string/title_activity_sub">
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".ActivityUsingTabLibrary"
+            android:label="@string/title_activity_activity_using_tab_library">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
     </application>
 

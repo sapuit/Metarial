@@ -47,8 +47,16 @@ public class MainActivity extends AppCompatActivity {
         mPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         mTabs = (SlidingTabLayout) findViewById(R.id.tabs);
         mTabs.setDistributeEvenly(true);
-        mTabs.setCustomTabView(R.layout.custom_tab_view, R.id.tabText);
 
+        mTabs.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
+            @Override
+            public int getIndicatorColor(int position) {
+                return getResources().getColor(R.color.customTabColorizer);
+            }
+        });
+
+//        mTabs.setBackgroundColor(getResources().getColor(R.color.primaryColor));
+        mTabs.setCustomTabView(R.layout.custom_tab_view, R.id.tabText);
         mTabs.setViewPager(mPager);
 
     }
@@ -77,6 +85,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(this, SubActivity.class));
         }
 
+        if (id == R.id.action_TabWithLibrary) {
+            startActivity(new Intent(this, ActivityUsingTabLibrary.class));
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -88,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
+
             tabs = getResources().getStringArray(R.array.tabs);
         }
 
@@ -102,11 +115,13 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
 
             Drawable drawable = getResources().getDrawable(icons[position]);
-            drawable.setBounds(0,0,56,56);
+            drawable.setBounds(0, 0, 56, 56);
             ImageSpan imageSpan = new ImageSpan(drawable);
             SpannableString spannableString = new SpannableString(" ");
-            spannableString.setSpan(imageSpan,0,spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            spannableString.setSpan(imageSpan, 0, spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
             return spannableString;
+//            return tabs[position];
         }
 
         @Override
